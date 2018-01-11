@@ -1,0 +1,22 @@
+{
+  "name": "myproject",
+  "description": "my project desc",
+  "main": "index.js",
+  "authors": [
+    "antony kanson"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "my",
+    "project"
+  ],
+  "homepage": "https://github.com/kansonanto/myProject",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
