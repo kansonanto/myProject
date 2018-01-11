@@ -1,6 +1,15 @@
 module.exports = function(grunt) {
     
+    var serveStatic = require('serve-static');
+
+    // Configurable paths for the app
+    var appConfig = {
+        app: 'src',
+        dist: 'dist'
+    };
+
       grunt.initConfig({
+        inspinia: appConfig,
         jshint: {
           files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
           options: {
@@ -13,15 +22,15 @@ module.exports = function(grunt) {
         connect: {
             options: {
                 port: 8005,
-                hostname: 'localhost',
-                livereload: 35000
+                hostname: 'localhost',              
+                base: 'src'   
             },
             livereload: {
                 options: {
                     open: true,
                     middleware: function(connect) {
                         return [                          
-                            
+                            serveStatic('src')
                         ];
                     }
                 }
@@ -35,7 +44,9 @@ module.exports = function(grunt) {
                 livereload: '<%= connect.options.livereload %>'
             },
             files: [
-               
+                '<%= inspinia.app %>/**/*.html',
+                '.tmp/styles/{,*/}*.css',
+                '<%= inspinia.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
             ]
         }
         },
@@ -76,6 +87,7 @@ module.exports = function(grunt) {
       
      // Run build version of app
      grunt.registerTask('server', [
+        'jshint','concat', 'uglify',
         'connect:livereload',
         'watch'
     ]);
