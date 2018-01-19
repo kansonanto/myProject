@@ -14,11 +14,14 @@ angular.module('myproject1App')
   
    function loginController(loginscope,navigate) {
     var vm = this;
+
+    
+
     loginscope.username = 'antony';
    
    vm.login = login;
    function login() {
-    navigate.go('main.home');   
+    navigate.go('main.report');   
    }
 
   };
