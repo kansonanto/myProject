@@ -1,0 +1,62 @@
+<style type="text/css">
+    #page-wrapper{
+        overflow-y: hidden;
+        overflow-x: hidden;
+        height: 100%;
+        min-height: 100vh;
+    }
+    /*
+    @media screen and (min-width: 480px) {
+        #page-wrapper {
+            height: 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            min-height: 653px;
+            min-height: 100vh;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        #page-wrapper {
+            height: 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            min-height: 653px;
+        }
+    }
+    
+    
+    @media screen and (min-width: 1224px) {
+        #page-wrapper {
+            height: 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            min-height: 1005px;
+        }
+    }
+    */
+    </style>
+    <!-- Wrapper-->
+    <div id="wrapper" class= "scroll-bar" ng-init="init()" >
+    
+        <!-- Navigation -->
+        <div class="leftNavigation" ng-include="'views/leftNavigation.html'"></div>
+    
+        <!-- Page wraper -->
+        <!-- ng-class with current state name give you the ability to extended customization your view -->
+        <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+    
+            <!-- Page wrapper -->
+            <div ng-include="'views/topNavigationBar.html'"></div>
+            <!-- Main view  -->
+            <!-- slimscroll="{height: '500px','padding-left':0}" -->
+            <div class="ui-view-content" ui-view scroll-top  style="margin-top: 62px;"></div>
+    
+            <!-- Footer -->
+            <div ng-include="'views/footer.html'" class="footerPadding"></div>
+    
+        </div>
+        <!-- End page wrapper-->
+    
+    </div>
+    <!-- End wrapper-->
