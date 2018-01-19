@@ -40,20 +40,20 @@
     <div id="wrapper" class= "scroll-bar" ng-init="init()" >
     
         <!-- Navigation -->
-        <div class="leftNavigation" ng-include="'views/leftNavigation.html'"></div>
+        <div class="leftNavigation" ng-include="'home/views/leftNavigation.html'"></div>
     
         <!-- Page wraper -->
         <!-- ng-class with current state name give you the ability to extended customization your view -->
         <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
     
             <!-- Page wrapper -->
-            <div ng-include="'views/topNavigationBar.html'"></div>
+            <div ng-include="'home/views/topNavigationBar.html'"></div>
             <!-- Main view  -->
             <!-- slimscroll="{height: '500px','padding-left':0}" -->
             <div class="ui-view-content" ui-view scroll-top  style="margin-top: 62px;"></div>
     
             <!-- Footer -->
-            <div ng-include="'views/footer.html'" class="footerPadding"></div>
+            <div ng-include="'home/views/footer.html'" class="footerPadding"></div>
     
         </div>
         <!-- End page wrapper-->

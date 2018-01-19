@@ -33,18 +33,18 @@ angular
       var helloState = {
         name: 'main.home',
         url: '/home',
-        templateUrl: '/views/home.html'
+        templateUrl: '/home/views/home.html'
       }
     
       var aboutState = {
         name: 'main.about',
         url: '/about',
-        templateUrl: '/views/about.html'
+        templateUrl: '/about/views/about.html'
       }
       var loginState ={
         name: 'login', 
         url: '/login',
-        templateUrl: '/views/login.html',
+        templateUrl: '/login/views/login.html',
         data: {
             pageTitle: 'Login'
         },
@@ -57,7 +57,7 @@ angular
         name : 'main',   
         abstract: true,        
           url: "/main",
-          templateUrl: "/views/main.html"     
+          templateUrl: "/home/views/main.html"     
         
        }
        
