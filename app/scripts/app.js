@@ -17,9 +17,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'htmlToPdfSave'
+    'summernote'
   ])
-  .config(function ($stateProvider, $urlRouterProvider,htmlToPdfSaveProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     // $routeProvider
     //   .when('/', {
     //     templateUrl: 'views/main.html',
@@ -62,7 +62,7 @@ angular
         
        }
        
-       $stateProvider.state(mainState);
+      $stateProvider.state(mainState);
       $stateProvider.state(helloState);
       $stateProvider.state(aboutState);
       $stateProvider.state(loginState);
