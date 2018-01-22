@@ -2,7 +2,7 @@
 
 angular.module('myproject1App')
 .controller('reportController',['$state','$scope','$q',function($state,reportscope,$q){
-
+    var vm = this;
     reportscope.reportName = 'test report name dfdf d1';  
     var base64Img = null;
 
@@ -17,11 +17,8 @@ angular.module('myproject1App')
 
 
 
-    reportscope.printDocument = function(){
+      vm.printDocument = function(){
        console.log('print funtion');
-
-
-
        var pdf = new jsPDF('p', 'pt', 'letter');
        
              // source can be HTML-formatted string, or a reference
@@ -85,8 +82,8 @@ angular.module('myproject1App')
 
             // pdf.addImage(reportscope.dfd , 'JPEG', 100, 200, 280, 210);
              
-               console.log("after from HTML.");
-                  pdf.save('Test.pdf');
+            console.log("after from HTML.");
+            pdf.save('Test.pdf');
     }  
     
 

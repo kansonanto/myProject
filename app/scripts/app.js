@@ -17,7 +17,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'summernote'
+    'summernote',
+    'htmlToPdfSave'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     // $routeProvider
