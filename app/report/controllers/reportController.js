@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('myproject1App')
-.controller('reportController',['$state','$scope','$q',function($state,reportscope,$q){
+.controller('reportController',['$state','$scope','$q','userAPI',function($state,reportscope,$q,userAPI){
     var vm = this;
     reportscope.reportName = 'test report name dfdf d1';  
     var base64Img = null;
@@ -13,9 +13,31 @@ angular.module('myproject1App')
         width: 550
       };
 
-    reportscope.htmlContent ="<span style='font-weight: bold;'>This is initial text</span>"
+    reportscope.htmlContent =""; // "<span style='font-weight: bold;'>This is initial text</span>"
+
+    initController();
+    
+            function initController() {               
+                loadAllUsers();
+            }
+
+    function loadAllUsers() {
+        userAPI.GetAll()    
+            .then(function (users) {
+                vm.allUsers = users;
+            });
 
 
+            userAPI.GetById(3310)    
+            .then(function (users) {
+                vm.allUsers = users;
+            });
+
+
+             
+    }
+
+ 
 
       vm.printDocument = function(){
        console.log('print funtion');
