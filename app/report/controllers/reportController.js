@@ -22,16 +22,23 @@ angular.module('myproject1App')
             }
 
     function loadAllUsers() {
+
+        // userAPI.GetByUsername()
+        //   .then(function(users){
+
+        //   });
+
         userAPI.GetAll()    
             .then(function (users) {
                 vm.allUsers = users;
+                console.log('test')
             });
 
 
-            userAPI.GetById(3310)    
-            .then(function (users) {
-                vm.allUsers = users;
-            });
+            // userAPI.GetById(3310)    
+            // .then(function (users) {
+            //     vm.allUsers = users;
+            // });
 
 
              
