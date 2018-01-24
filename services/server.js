@@ -1,7 +1,9 @@
 
 var express = require('express');
 var app = express()
-, cors = require('cors');
+, cors = require('cors'),
+// Task = require('./api/models/userModel'), 
+bodyParser = require('body-parser');
 
 const corsOptions = {
     origin: 'http://localhost:9000',
@@ -9,6 +11,11 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions));
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 
 // app.all("/api/*", function (req, res, next) {
 //     res.header("Access-Control-Allow-Origin", "*");

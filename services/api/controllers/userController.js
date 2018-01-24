@@ -22,12 +22,13 @@ exports.listAllUser = function(req, res){
             var request = new sql.Request();
                
             // query to the database and get the records
-            request.query('select * from pr_sec_user_master', function (err, recordset) {
+            request.query('select * from pr_sec_user_master', function (err, task) {
                 
                 if (err) console.log(err)
     
                 // send records as a response
-                res.send(recordset);
+//                res.send(recordset);
+                res.json(task);
                 sql.close();
             });
         });
