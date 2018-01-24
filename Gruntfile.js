@@ -449,6 +449,12 @@ module.exports = function (grunt) {
     grunt.task.run(['serve:' + target]);
   });
 
+  // grunt.registerTask('node', 'Start a custom web server', function() {
+  //   grunt.log.writeln('Started web server on port 5000');
+  //   require('./app/scripts/server.js').listen(5000);
+  // });
+
+
   grunt.registerTask('test', [
     'clean:server',
     'wiredep',

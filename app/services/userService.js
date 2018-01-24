@@ -21,7 +21,7 @@ angular.module('success-services',[])
         var deferred = $q.defer();
         var req = {
             method: 'GET',
-            url: 'http://localhost:5000/api/GetUser'
+            url: 'http://localhost:5000/api/GetAllUser'
             // headers: {
             //   'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbElkIjoiZTJzdGVzdHMxQGdtYWlsLmNvbSIsImV4cGlyYXRpb24iOjE1MTgwNDg2MDEwMDgsImV4dGVybmFsIjp0cnVlLCJhZG1pbiI6dHJ1ZSwidXNlcklkIjoyOTEyLCJvcmdhbml6YXRpb25JZCI6MiwidHlwZSI6InN0YWZmIiwib3JnYW5pemF0aW9uVHlwZSI6ImZyZWUifQ.iKRdKRDVuV9Uk0kd1fyHa4S6A_OWh47mkjFnIjNf9xs'
             // }
