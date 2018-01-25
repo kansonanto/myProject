@@ -26,8 +26,15 @@ angular.module('myproject1App')
             loadAllUsers();
         }
 
-        function loadReportDetails() {
+        function loadDrp(){
+            reportscope.industrytypes = [{"shortName":"test"}];
 
+            
+        }
+
+        function loadReportDetails() {
+            vm.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
+            
             var reportData = {
                 reportName: "First report 1",
                 reportType: "paper board statement"
