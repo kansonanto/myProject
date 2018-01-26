@@ -1,4 +1,101 @@
-report print  {{reportName}}
+<style>
+
+.home_widget .select2-drop {
+  width: 87.2% !important;
+}
+
+
+.ui-select-drop-down .select2-drop {
+  position: relative;
+}
+
+
+.dropDownSelect2 {
+  width: 100%;
+  padding-left: 1px !important;
+}
+
+.dropDownSelect2Popup {
+  width: 100%;
+  padding-left: -1px !important;
+}
+
+
+.select2 > .select2-choice.ui-select-match {
+  /* Because of the inclusion of Bootstrap */
+  height: 29px;
+}
+
+
+.dropDownSelect2 {
+  width: 100%;
+  padding-left: 1px !important;
+}
+
+.dropDownSelect2Popup {
+  width: 100%;
+  padding-left: -1px !important;
+}
+
+.dropDownSelect3Popup {
+  width: 80%;
+  padding-left: -1px !important;
+}
+
+.dropDownSelect4Popup {
+  width: 30%;
+  padding-left: -1px !important;
+}
+
+</style>
+<div class="row">
+    <div class="col-sm-12">
+       <div role="form">
+          <div class="form-group">
+             <label>Print order No *</label>
+             <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+                <input id="new_company_name" autocomplete="off" type="text" ng-model="job.companyName" placeholder="COMPANY_NAME" maxlength="255" class="form-control" ng-change="name_error = false">
+             </div>
+          </div>
+          <div class="form-group">
+             <label>Print order Name *</label>
+             <div id="new_company_description_error" ng-class="{'has-error':company_desc_error == true}">
+                <textarea id="new_job_companydescription" autocomplete="off" ng-model="job.companyDescription" placeholder="COMPANY_DESCRIPTION" class="form-control" ng-change="company_desc_error = false" maxlength="2000"></textarea>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="row">
+    <div class="col-sm-6">
+       <div class="form-group" id="jobIndustry">
+          <label>Order date *</label>
+          <ui-select id="job-industry-dropdown" ng-model="industry.selected" class="dropDownSelect2Popup margin-bottom-175" theme="select2" on-select="onSelectedIndustry()" reset-search-input="false">
+             <ui-select-match id="new_job_industry_match3" allow-clear="true" placeholder="{{'SELECT_OR_SEARCH_INDUSTRY' }}"><span id="new_job_industry_selected">{{$select.selected }}</span></ui-select-match>
+             <ui-select-choices repeat="industry in reportCtrl.availableColors | filter: $select.search track by $index" refresh="refreshCategories('industrytype')" refresh-delay="0">
+                <div id="new_job_industry" ng-bind-html="industry"></div>
+             </ui-select-choices>
+          </ui-select>
+
+          <!-- <ui-select ng-model="reportCtrl.multipleDemo.colors" theme="bootstrap" ng-disabled="ctrl.disabled" close-on-select="false" style="width: 300px;" title="Choose a color">
+            <ui-select-match placeholder="Select colors...">{{$select.selected}}</ui-select-match>
+            <ui-select-choices repeat="color in reportCtrl.availableColors | filter:$select.search">
+              {{color}}
+            </ui-select-choices>
+          </ui-select> -->
+       </div>
+    </div>
+    <div class="col-sm-6">
+       <div class="form-group" id="jobOtherIndustry">
+          <label>INDUSTRY_OTHER</label>
+          <div id="new_job_industryOther_error">
+             <input id="new_job_industryOther" autocomplete="off" type="text" ng-model="job.typeOther" placeholder="INDUSTRY_OTHER" maxlength="255" class="form-control">
+          </div>
+       </div>
+    </div>
+ </div>
+
+ 
 
 <h4>code : HTML string in summernote</h4>
 <summernote ng-model="htmlContent" height="300"></summernote>

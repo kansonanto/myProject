@@ -19,7 +19,9 @@ angular
     'ngTouch',
     'summernote',
     'htmlToPdfSave',
-    'services'   
+    'services',
+    'ui.select'   
+ 
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     // $routeProvider
