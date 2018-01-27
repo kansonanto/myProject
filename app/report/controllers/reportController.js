@@ -3,7 +3,16 @@
 angular.module('myproject1App')
     .controller('reportController', ['$state', '$scope', '$q', 'userAPI', 'reportEntity', function ($state, reportscope, $q, userAPI, reportEntity) {
         var vm = this;
-        reportscope.reportName = 'test report name dfdf d1';
+        vm.order = {};
+        vm.order.printOrderNumber = '';
+        vm.order.printReleaseNumber = '';
+        vm.order.printOrderDate = '';
+        vm.order.printReleaseDate = '';
+        vm.order.paymentType = '';
+        reportscope.printBillingDate = new Date();
+
+        vm.order.printBookName = '';
+        reportscope.printOrderName = 'test report name dfdf d1';
         var base64Img = null;
 
         var margins = {
@@ -19,22 +28,43 @@ angular.module('myproject1App')
 
         function initController() {
             loadReportDetails();
+           
 
-            console.log('reportEntity.getReportEntity.reportName '+ reportEntity.getReportEntity().reportName)
+             alert(reportscope.printBillingDate);
+            console.log('reportEntity.getReportEntity.reportName ' + reportEntity.getReportEntity().reportName)
             reportscope.reportName = reportEntity.getReportEntity().reportName;
 
-            loadAllUsers();
+
         }
 
-        function loadDrp(){
-            reportscope.industrytypes = [{"shortName":"test"}];
+        vm.order.showItem = function () {
+            //  alert(vm.order.paymentType);
+            if (vm.order.paymentType == 0) {
+                reportscope.myTabShow = true;
+                reportscope.mycoverTab = 'report/views/directFinalCover.html';
+            } else if (vm.order.paymentType == 1) {
+                reportscope.myTabShow = true;
+                reportscope.mycoverTab = 'report/views/partPaymentCover.html';
+            }
+            else if (vm.order.paymentType == 2) {
+                reportscope.myTabShow = true;
+                reportscope.mycoverTab = 'report/views/finalPaymentCover.html';
+            } else {
+                reportscope.myTabShow = false;
+                reportscope.mycoverTab = '';
+            }
 
-            
+        }
+
+        function loadDrp() {
+            reportscope.industrytypes = [{ "shortName": "test" }];
+
+
         }
 
         function loadReportDetails() {
-            vm.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
-            
+            vm.availableBookTypes = ['Sale Copies', 'Free Copies'];
+
             var reportData = {
                 reportName: "First report 1",
                 reportType: "paper board statement"

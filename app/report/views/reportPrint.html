@@ -1,104 +1,148 @@
-<style>
 
-.home_widget .select2-drop {
-  width: 87.2% !important;
-}
-
-
-.ui-select-drop-down .select2-drop {
-  position: relative;
-}
-
-
-.dropDownSelect2 {
-  width: 100%;
-  padding-left: 1px !important;
-}
-
-.dropDownSelect2Popup {
-  width: 100%;
-  padding-left: -1px !important;
-}
-
-
-.select2 > .select2-choice.ui-select-match {
-  /* Because of the inclusion of Bootstrap */
-  height: 29px;
-}
-
-
-.dropDownSelect2 {
-  width: 100%;
-  padding-left: 1px !important;
-}
-
-.dropDownSelect2Popup {
-  width: 100%;
-  padding-left: -1px !important;
-}
-
-.dropDownSelect3Popup {
-  width: 80%;
-  padding-left: -1px !important;
-}
-
-.dropDownSelect4Popup {
-  width: 30%;
-  padding-left: -1px !important;
-}
-
-</style>
-<div class="row">
+   <div class="row">
     <div class="col-sm-12">
        <div role="form">
           <div class="form-group">
-             <label>Print order No *</label>
-             <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
-                <input id="new_company_name" autocomplete="off" type="text" ng-model="job.companyName" placeholder="COMPANY_NAME" maxlength="255" class="form-control" ng-change="name_error = false">
+             <label>Book Name *</label>
+             <div id="new_book_name_error" ng-class="{'has-error':name_error == true}">
+                <input id="new_book_name" autocomplete="off" type="text" ng-model="reportCtrl.order.bookName" placeholder="Book Name" maxlength="500" class="form-control" ng-change="name_error = false">
              </div>
           </div>
           <div class="form-group">
-             <label>Print order Name *</label>
+
+          </div>
+       </div>
+    </div>
+ </div>
+<div class="row">
+  <div class="col-sm-6">
+     <div class="form-group" id="PrintorderNo">
+        <label>Print Order No *</label>
+        <div id="print_order_no_error" ng-class="{'has-error':name_error == true}">
+          <input id="print_order_no" autocomplete="off" type="text" ng-model="reportCtrl.order.printOrderNumber" placeholder="Print Order No" maxlength="255" class="form-control" ng-change="name_error = false">
+       </div>  
+     </div>
+  </div>
+  <div class="col-sm-6">
+     <div class="form-group" id="jobOtherIndustry">
+        <label>Print Order date *</label>
+        <div id="new_job_industryOther_error">
+           <input id="new_job_industryOther" autocomplete="off" type="date" ng-model="order.printOrderDate" placeholder="Print Order date" maxlength="255" class="form-control">
+        </div>
+     </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+          <div class="form-group">
+             <label>Release order No *</label>
+             <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+                <input id="new_company_name" autocomplete="off" type="text" ng-model="order.printReleaseNumber" placeholder="Print Release No" maxlength="255" class="form-control" ng-change="name_error = false">
+             </div>
+          </div>
+    </div>
+    <div class="col-sm-6">
+          <div class="form-group">
+             <label>Release order Date *</label>
              <div id="new_company_description_error" ng-class="{'has-error':company_desc_error == true}">
-                <textarea id="new_job_companydescription" autocomplete="off" ng-model="job.companyDescription" placeholder="COMPANY_DESCRIPTION" class="form-control" ng-change="company_desc_error = false" maxlength="2000"></textarea>
+                <input id="new_company_name" autocomplete="off" type="date" ng-model="order.printReleaseDate" placeholder="Release Order Date" maxlength="255" class="form-control" ng-change="name_error = false">
+
+               
              </div>
           </div>
        </div>
-    </div>
- </div>
+</div>
+  
+ 
  <div class="row">
-    <div class="col-sm-6">
-       <div class="form-group" id="jobIndustry">
-          <label>Order date *</label>
-          <ui-select id="job-industry-dropdown" ng-model="industry.selected" class="dropDownSelect2Popup margin-bottom-175" theme="select2" on-select="onSelectedIndustry()" reset-search-input="false">
-             <ui-select-match id="new_job_industry_match3" allow-clear="true" placeholder="{{'SELECT_OR_SEARCH_INDUSTRY' }}"><span id="new_job_industry_selected">{{$select.selected }}</span></ui-select-match>
-             <ui-select-choices repeat="industry in reportCtrl.availableColors | filter: $select.search track by $index" refresh="refreshCategories('industrytype')" refresh-delay="0">
-                <div id="new_job_industry" ng-bind-html="industry"></div>
-             </ui-select-choices>
-          </ui-select>
+  <div class="col-sm-6">
+     <div class="form-group" id="jobIndustry">
+        <label>Book Type *</label>      
 
-          <!-- <ui-select ng-model="reportCtrl.multipleDemo.colors" theme="bootstrap" ng-disabled="ctrl.disabled" close-on-select="false" style="width: 300px;" title="Choose a color">
-            <ui-select-match placeholder="Select colors...">{{$select.selected}}</ui-select-match>
-            <ui-select-choices repeat="color in reportCtrl.availableColors | filter:$select.search">
-              {{color}}
-            </ui-select-choices>
-          </ui-select> -->
-       </div>
+        <ui-select ng-model="reportCtrl.order.bookType" theme="bootstrap"  close-on-select="true" style="width: 100%;" title="Choose a Book Type">
+          <ui-select-match placeholder="Select book type...">{{$select.selected}}</ui-select-match>
+          <ui-select-choices repeat="bookType in reportCtrl.availableBookTypes | filter:$select.search">
+            {{bookType}}
+          </ui-select-choices>
+        </ui-select>
+     </div>
+  </div>
+  <div class="col-sm-6">
+     <div class="form-group" id="jobOtherIndustry">
+        <label>No of Copies</label>
+        <div id="new_job_industryOther_error">
+           <input id="new_job_no_of_copies" autocomplete="off" type="text" ng-model="job.typeOther" placeholder="No of Copies" maxlength="255" class="form-control">
+        </div>
+     </div>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+        <div class="form-group">
+           <label>No of BRV *</label>
+           <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="order.printReleaseNumber" placeholder="Print Release No" maxlength="255" class="form-control" ng-change="name_error = false">
+           </div>
+        </div>
+  </div>
+  <div class="col-sm-6">
+        <div class="form-group">           
+          
+        </div>
+     </div>
+</div>  
+
+
+<div class="row">
+    <div class="col-sm-6">
+          <div class="form-group">
+             <label>Payment Type *</label>
+             <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+                    <div class="col-md-12"> 
+                      <label class="radio-inline" for="radios-0">
+                          <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" checked value="0" ng-click="reportCtrl.order.showItem()" /> Direct Payment
+                      </label> 
+                      <label class="radio-inline" for="radios-1">
+                          <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" value="1"  ng-click="reportCtrl.order.showItem()"/> Part Payment
+                      </label> 
+                      <label class="radio-inline" for="radios-2">
+                       <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" value="2" ng-click="reportCtrl.order.showItem()"/> Final Payment
+                      </label> 
+                    
+                    </div>
+
+             </div>
+          </div>
     </div>
     <div class="col-sm-6">
-       <div class="form-group" id="jobOtherIndustry">
-          <label>INDUSTRY_OTHER</label>
-          <div id="new_job_industryOther_error">
-             <input id="new_job_industryOther" autocomplete="off" type="text" ng-model="job.typeOther" placeholder="INDUSTRY_OTHER" maxlength="255" class="form-control">
+          <div class="form-group">           
+              <label>Billing Date *</label>
+              <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+ 
+                <input id="new_billing_date"  type="Date" ng-model="printBillingDate" placeholder="yyyy-MM-dd" maxlength="255" class="form-control" ng-change="name_error = false">
+              </div>
           </div>
        </div>
-    </div>
- </div>
+  </div>  
 
- 
+<!-- {{ order.printBillingDate | date : 'dd.MM.y' }} -->
 
-<h4>code : HTML string in summernote</h4>
-<summernote ng-model="htmlContent" height="300"></summernote>
-
-
-<button type="button" ng-click="reportCtrl.printDocument()" class="btn">Hello Someone</button>
+<ul class="nav nav-tabs" id="myTab" ng-show="myTabShow">
+  <li class="active"><a data-target="#coverletter" data-toggle="tab">Cover Letter</a></li>
+  <li><a data-target="#invoice" data-toggle="tab">Invoice</a></li>
+  <li><a data-target="#paperstatement" data-toggle="tab">Paper board Statement</a></li>
+  <li><a data-target="#plateeffacement" data-toggle="tab">Plate Effacement</a></li>
+</ul>
+<div class="tab-content" ng-show="myTabShow">
+  <div class="tab-pane active" id="coverletter"><div><br></div>  <div class="leftNavigation" ng-include="mycoverTab"></div></div>
+  <div class="tab-pane " id="invoice"> <div><br></div>  <div class="leftNavigation" ng-include="'report/views/directFinalInvoice.html'"></div></div>
+  <div class="tab-pane" id="paperstatement"> <div><br></div>  <div class="leftNavigation" ng-include="'report/views/paperStatement.html'"></div>
+</div>
+  <div class="tab-pane" id="plateeffacement"><div><br></div>  <div class="leftNavigation" ng-include="'report/views/plateeffacement.html'"></div>
+</div>
+<br>

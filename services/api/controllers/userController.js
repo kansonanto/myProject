@@ -9,8 +9,8 @@ exports.listAllUser = function(req, res){
         var config = {
             user: 'sa',
             password: 'welcome@123',
-            server: '192.168.1.124\\MS2014SQLEXPRESS', 
-            database: 'BATES_LIVE' 
+            server: 'NC-PC', 
+            database: 'DEV-AA-OFFSET' 
         };
     
         // connect to your database
@@ -22,7 +22,7 @@ exports.listAllUser = function(req, res){
             var request = new sql.Request();
                
             // query to the database and get the records
-            request.query('select * from pr_sec_user_master', function (err, task) {
+            request.query('select * from AA_USER_INFO', function (err, task) {
                 
                 if (err) console.log(err)
     
