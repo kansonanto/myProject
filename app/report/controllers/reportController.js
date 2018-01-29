@@ -30,7 +30,7 @@ angular.module('myproject1App')
             loadReportDetails();
            
 
-             alert(reportscope.printBillingDate);
+            
             console.log('reportEntity.getReportEntity.reportName ' + reportEntity.getReportEntity().reportName)
             reportscope.reportName = reportEntity.getReportEntity().reportName;
 

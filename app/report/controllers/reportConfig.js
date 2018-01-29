@@ -8,7 +8,7 @@ angular.module('myproject1App')
         templateUrl:'/report/views/reportPrint.html',
         controller:'reportController',
         controllerAs:'reportCtrl'
-    })
+    })    
     .state('main.sampleReport',{
         url:'/sampleReport',
         templateUrl:'/report/views/sampleReport.html',

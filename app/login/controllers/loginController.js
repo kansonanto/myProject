@@ -21,7 +21,7 @@ angular.module('myproject1App')
    
    vm.login = login;
    function login() {
-    navigate.go('main.report');   
+    navigate.go('main.createOrder');   
    }
 
   };
