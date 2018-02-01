@@ -27,7 +27,7 @@
      <div class="form-group" id="jobOtherIndustry">
         <label>Print Order date *</label>
         <div id="new_job_industryOther_error">
-           <input id="new_job_industryOther" autocomplete="off" type="date" ng-model="order.printOrderDate" placeholder="Print Order date" maxlength="255" class="form-control">
+           <input id="new_job_industryOther" autocomplete="off" type="date" ng-model="reportCtrl.order.printOrderDate" placeholder="Print Order date" maxlength="255" class="form-control">
         </div>
      </div>
   </div>
@@ -38,7 +38,7 @@
           <div class="form-group">
              <label>Release order No *</label>
              <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
-                <input id="new_company_name" autocomplete="off" type="text" ng-model="order.printReleaseNumber" placeholder="Print Release No" maxlength="255" class="form-control" ng-change="name_error = false">
+                <input id="new_company_name" autocomplete="off" type="text" ng-model="reportCtrl.order.printReleaseNumber" placeholder="Print Release No" maxlength="255" class="form-control" ng-change="name_error = false">
              </div>
           </div>
     </div>
@@ -46,7 +46,7 @@
           <div class="form-group">
              <label>Release order Date *</label>
              <div id="new_company_description_error" ng-class="{'has-error':company_desc_error == true}">
-                <input id="new_company_name" autocomplete="off" type="date" ng-model="order.printReleaseDate" placeholder="Release Order Date" maxlength="255" class="form-control" ng-change="name_error = false">
+                <input id="new_company_name" autocomplete="off" type="date" ng-model="reportCtrl.order.printReleaseDate" placeholder="Release Order Date" maxlength="255" class="form-control" ng-change="name_error = false">
 
                
              </div>
@@ -72,7 +72,7 @@
      <div class="form-group" id="jobOtherIndustry">
         <label>No of Copies</label>
         <div id="new_job_industryOther_error">
-           <input id="new_job_no_of_copies" autocomplete="off" type="text" ng-model="job.typeOther" placeholder="No of Copies" maxlength="255" class="form-control">
+           <input id="new_job_no_of_copies" autocomplete="off" type="text" ng-model="reportCtrl.order.bookNoOfCopies" placeholder="No of Copies" maxlength="255" class="form-control">
         </div>
      </div>
   </div>
@@ -86,7 +86,7 @@
         <div class="form-group">
            <label>No of BRV *</label>
            <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
-              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="order.printReleaseNumber" placeholder="Print Release No" maxlength="255" class="form-control" ng-change="name_error = false">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.noOfBRV" placeholder="Print Release No" maxlength="255" class="form-control" ng-change="name_error = false">
            </div>
         </div>
   </div>
@@ -124,7 +124,7 @@
               <label>Billing Date *</label>
               <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
  
-                <input id="new_billing_date"  type="Date" ng-model="printBillingDate" placeholder="yyyy-MM-dd" maxlength="255" class="form-control" ng-change="name_error = false">
+                <input id="new_billing_date"  type="Date" ng-model="reportCtrl.order.printBillingDate" placeholder="yyyy-MM-dd" maxlength="255" class="form-control" ng-change="name_error = false">
               </div>
           </div>
        </div>

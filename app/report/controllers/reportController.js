@@ -4,14 +4,17 @@ angular.module('myproject1App')
     .controller('reportController', ['$state', '$scope', '$q', 'userAPI', 'reportEntity', function ($state, reportscope, $q, userAPI, reportEntity) {
         var vm = this;
         vm.order = {};
+        vm.order.printBookName = '';        
         vm.order.printOrderNumber = '';
         vm.order.printReleaseNumber = '';
         vm.order.printOrderDate = '';
         vm.order.printReleaseDate = '';
+        vm.order.bookNoOfCopies = '';
         vm.order.paymentType = '';
+        vm.order.bookType = '';
+        vm.order.noOfBRV = '';                
         reportscope.printBillingDate = new Date();
 
-        vm.order.printBookName = '';
         reportscope.printOrderName = 'test report name dfdf d1';
         var base64Img = null;
 
