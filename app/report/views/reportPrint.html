@@ -5,7 +5,7 @@
           <div class="form-group">
              <label>Book Name *</label>
              <div id="new_book_name_error" ng-class="{'has-error':name_error == true}">
-                <input id="new_book_name" autocomplete="off" type="text" ng-model="reportCtrl.order.bookName" placeholder="Book Name" maxlength="500" class="form-control" ng-change="name_error = false">
+                <input id="new_book_name" autocomplete="off" type="text" ng-model="reportCtrl.order.printBookName" placeholder="Book Name" maxlength="500" class="form-control" ng-change="name_error = false">
              </div>
           </div>
           <div class="form-group">
@@ -78,9 +78,6 @@
   </div>
 </div>
 
-
-
-
 <div class="row">
   <div class="col-sm-6">
         <div class="form-group">
@@ -124,7 +121,7 @@
               <label>Billing Date *</label>
               <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
  
-                <input id="new_billing_date"  type="Date" ng-model="reportCtrl.order.printBillingDate" placeholder="yyyy-MM-dd" maxlength="255" class="form-control" ng-change="name_error = false">
+                <input id="new_billing_date"  type="Date" ng-model="printBillingDate" placeholder="yyyy-MM-dd" maxlength="255" class="form-control" ng-change="name_error = false">
               </div>
           </div>
        </div>

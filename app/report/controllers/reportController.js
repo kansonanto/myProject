@@ -66,7 +66,7 @@ angular.module('myproject1App')
         }
 
         function loadReportDetails() {
-            vm.availableBookTypes = ['Sale Copies', 'Free Copies'];
+            vm.availableBookTypes = ['Sale copies', 'Free copies'];
 
             var reportData = {
                 reportName: "First report 1",
