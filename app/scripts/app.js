@@ -22,7 +22,7 @@ angular
     'services',
     'ui.select'   
  
-  ])
+  ])  
   .config(function ($stateProvider, $urlRouterProvider) {
     // $routeProvider
     //   .when('/', {
@@ -124,6 +124,7 @@ angular
       }
     };
   })
+  
   .filter('INR', function () {        
     return function (input) {
         if (! isNaN(input)) {
@@ -145,6 +146,7 @@ angular
         }
     }
 })
+
 .filter('INRCOPIES', function () {        
   return function (input) {
       if (! isNaN(input)) {

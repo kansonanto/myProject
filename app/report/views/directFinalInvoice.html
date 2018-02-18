@@ -1,13 +1,16 @@
+
+
 <button  pdf-save-button="idpartInvoice" pdf-name="someone.pdf"  class="btn">Print</button>
 
 <div pdf-save-content="idpartInvoice" width="100%">
-
+        <my-Invoice-Header></my-Invoice-Header>
+        <div style="margin-top: 0px;">
         <p align="center">
                 <span style="font-family: 'Times New Roman', serif;">
                     <span style="font-size: medium;">
-                        <u>
+                       
                             <strong>INVOICE</strong>
-                        </u>
+                        
                     </span>
                 </span>
             </p>
@@ -28,6 +31,8 @@
                     </span>
                 </span>
             </p>
+        </div>
+            <div>
             <p align="justify">
                 <span style="font-family: 'Times New Roman', serif;">
                     <span style="font-size: medium;">
@@ -45,11 +50,11 @@
                     <span style="font-size: medium;"> Tamil Nadu Text Book &amp; Educational Service Corporation,</span>
                 </span>
             </p>
-            <p style="padding-left: 30px;" align="justify">
+            <!-- <p style="padding-left: 30px;" align="justify">
                 <span style="font-family: 'Times New Roman', serif;">
                     <span style="font-size: medium;"> E.V.K. Sampth Building,</span>
                 </span>
-            </p>
+            </p> -->
             <p style="padding-left: 30px;" align="justify">
                 <span style="font-family: 'Times New Roman', serif;">
                     <span style="font-size: medium;"> DPI Campus,</span>
@@ -60,6 +65,7 @@
                     <span style="font-size: medium;">Chennai &ndash; 6.</span>
                 </span>
             </p>
+            </div>
             <p align="right">&nbsp;</p>
             <p align="justify">
                 <span style="font-family: 'Times New Roman', serif;">
@@ -84,7 +90,7 @@
             
                 <table cellpadding="0" cellspacing="0" width="99%">
                     <thead>
-                        <tr class="heading" style="outline: thin solid">
+                        <tr class="heading">
                             <td width="40%">
                                 Particulars
                             </td>
@@ -100,14 +106,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="item">
                             <td>
             
                                 <p>To the printing charge for P.O.NO:{{reportCtrl.order.printOrderNumber}}. {{reportCtrl.order.printBookName}} {{reportCtrl.order.paymentType}} {{reportCtrl.order.bookNoOfCopies}}
                                 </p>
             
                             </td>
-                            <td rowspan="4" style="vertical-align:middle;" align="justify">
+                            <td style="vertical-align:middle;" align="justify">
             
                                 <p>1,15,000 Copies</p>
                             </td>
@@ -122,13 +128,16 @@
                             </td>
                         </tr>
             
-                        <tr>
+                        <tr class="item">
                                 <td>               
                 
                                     <p>Platemaking charge</p>
                 
                                 </td>
+                                <td>
                 
+                
+                                    </td>
                                 <td>
                 
                 
@@ -140,14 +149,17 @@
                                 </td>
                             </tr>
 
-                        <tr>
+                        <tr class="item">
                             <td>
             
             
                                 <p>To the book Transport charge.</p>
             
                             </td>
-            
+                            <td>
+                
+                
+                                </td>
                             <td>
             
             
@@ -159,7 +171,7 @@
                             </td>
                         </tr>
             
-                        <tr>
+                        <tr >
                             <td>
             
             
@@ -168,7 +180,10 @@
                                 <p>48KG 90 GSM</p>
             
                             </td>
-            
+                            <td>
+                
+                
+                                </td>
                             <td>           
             
                             </td>
@@ -176,7 +191,7 @@
                                 <p>15 000</p>
                             </td>
                         </tr>
-                        <tr >
+                        <tr class="total">
                             <td colspan="2"></td>
                             
                              <td><strong>Total:</strong></td>
@@ -193,4 +208,5 @@
                 </p>
             </div>
             <br>
+        </div>
 </div>

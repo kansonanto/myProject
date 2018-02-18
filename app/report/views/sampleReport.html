@@ -1,45 +1,212 @@
-<button  pdf-save-button="idpartPaymentCover" pdf-name="someone.pdf"  class="btn">Print</button>
-<br>
-<div pdf-save-content="idpartPaymentCover" width="100%">
-        
-        <div class="row">
-                <div class="col-sm-6">
-                        <p><strong>TIN: 33515265165</strong></p>
-                </div>
-                <div class="col-sm-6">
-                        <p class="pull-right"><strong>Cell: 9842182251</strong></p>
-                    </div>
+
+
+<button  pdf-save-button="idpartInvoice" pdf-name="someone.pdf"  class="btn">Print</button>
+
+<div pdf-save-content="idpartInvoice" width="100%">
+        <my-Invoice-Header></my-Invoice-Header>
+        <div style="margin-top: 0px;">
+        <p align="center">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;">
+                       
+                            <strong>INVOICE</strong>
+                        
+                    </span>
+                </span>
+            </p>
+            <p align="right">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;">
+            
+                        <strong>Invoice No: 65</strong>
+            
+                    </span>
+                </span>
+            </p>
+            <p align="right">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;">
+            
+                        <strong>Date: {{ printBillingDate | date : 'dd.MM.y' }}</strong>
+                    </span>
+                </span>
+            </p>
         </div>
-        <div class="row">
-                <div class="col-sm-12">
-                <p><strong>CST: 804833/01/05/2012</strong></p>
-                </div>
+            <div>
+            <p align="justify">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;">
+                        <strong>To</strong>
+                    </span>
+                </span>
+            </p>
+            <p style="padding-left: 30px;" align="justify">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;"> The Managing Director,</span>
+                </span>
+            </p>
+            <p style="padding-left: 30px;" align="justify">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;"> Tamil Nadu Text Book &amp; Educational Service Corporation,</span>
+                </span>
+            </p>
+            <!-- <p style="padding-left: 30px;" align="justify">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;"> E.V.K. Sampth Building,</span>
+                </span>
+            </p> -->
+            <p style="padding-left: 30px;" align="justify">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;"> DPI Campus,</span>
+                </span>
+            </p>
+            <p style="padding-left: 30px;" align="justify">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;">Chennai &ndash; 6.</span>
+                </span>
+            </p>
+            </div>
+            <p align="right">&nbsp;</p>
+            <p align="justify">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;">
+                        <strong>Respected Sir,</strong>
+                    </span>
+                </span>
+            </p>
+            <p align="justify">
+                <span style="font-family: 'Times New Roman', serif;">
+                    <span style="font-size: medium;">
+                        <strong>Subject:</strong> Invoice &ndash; Reg
+                    </span>
+                </span>
+            
+                <p>
+                    <strong>Ref. P.O.NO: {{reportCtrl.order.printOrderNumber}}, Date: 20.11.2017</strong>
+                </p>
+            </p>
+            
+            <div class="invoice-box">
+            
+                <table cellpadding="0" cellspacing="0" width="99%">
+                    <thead>
+                        <tr class="heading">
+                            <td width="40%">
+                                Particulars
+                            </td>
+                            <td width="20%">
+                                Qty
+                            </td>
+                            <td width="20%">
+                                Rate (Rs)
+                            </td>
+                            <td width="20%">
+                                Total Amount
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="item">
+                            <td>
+            
+                                <p>To the printing charge for P.O.NO:{{reportCtrl.order.printOrderNumber}}. {{reportCtrl.order.printBookName}} {{reportCtrl.order.paymentType}} {{reportCtrl.order.bookNoOfCopies}}
+                                </p>
+            
+                            </td>
+                            <td style="vertical-align:middle;" align="justify">
+            
+                                <p>1,15,000 Copies</p>
+                            </td>
+                            <td>
+            
+                                <p>Per 1000 Copies 10,250/-</p>
+                            </td>
+                            <td>
+            
+                                <p>11,78,750</p>
+            
+                            </td>
+                        </tr>
+            
+                        <tr class="item">
+                                <td>               
+                
+                                    <p>Platemaking charge</p>
+                
+                                </td>
+                                <td>
+                
+                
+                                    </td>
+                                <td>
+                
+                
+                                </td>
+                                <td>
+                
+                                    <p>60,000</p>
+                
+                                </td>
+                            </tr>
+
+                        <tr class="item">
+                            <td>
+            
+            
+                                <p>To the book Transport charge.</p>
+            
+                            </td>
+                            <td>
+                
+                
+                                </td>
+                            <td>
+            
+            
+                            </td>
+                            <td>
+            
+                                <p>60,000</p>
+            
+                            </td>
+                        </tr>
+            
+                        <tr >
+                            <td>
+            
+            
+                                <p>To the Kraft usage</p>
+                                191x117CM
+                                <p>48KG 90 GSM</p>
+            
+                            </td>
+                            <td>
+                
+                
+                                </td>
+                            <td>           
+            
+                            </td>
+                            <td>
+                                <p>15 000</p>
+                            </td>
+                        </tr>
+                        <tr class="total">
+                            <td colspan="2"></td>
+                            
+                             <td><strong>Total:</strong></td>
+                            <td>
+                                    <strong>  12, 53,750 </strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <br>
+                <p>
+                    <strong>In words: Twelve lakh fifty three thousand seven hundred and fifty only /-</strong>
+                </p>
+            </div>
+            <br>
         </div>
-        <p><strong>ARUL ACHAGAM OFFSET PRINTERS</strong></p>
-        <p><strong>208/2j1, Mottanampatti Road, Near MGR Nagar,</strong></p>
-        <p><strong>Mettupatti, Begambur (Po), Dindigul &ndash; 624002.</strong></p>
-<p align="right"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>Date: {{ printBillingDate | date : 'dd.MM.y' }}</strong></span></span></p>
-<p align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>To</strong></span></span></p>
-<p style="padding-left: 30px;" align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> The Managing Director,</span></span></p>
-<p style="padding-left: 30px;" align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> Tamil Nadu Text Book &amp; Educational Service Corporation,</span></span></p>
-<p style="padding-left: 30px;" align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> E.V.K. Sampth Building,</span></span></p>
-<p style="padding-left: 30px;" align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> DPI Campus,</span></span></p>
-<p style="padding-left: 30px;" align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">Chennai &ndash; 6.</span></span></p>
-<p align="right">&nbsp;</p>
-<p align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>Respected Sir,</strong></span></span></p>
-<p align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>Sub:</strong></span></span><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> Part payment for </span></span><span style="font-family: 'Times New Roman', serif;"><strong>P.O.NO: {{reportCtrl.order.printOrderNumber}}. {{reportCtrl.order.printBookName}} {{reportCtrl.order.bookType}} {{reportCtrl.order.bookNoOfCopies | INRCOPIES}}</strong></span></p>
-<p align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">We have delivered<strong> P.O.NO:{{reportCtrl.order.printOrderNumber}}. {{reportCtrl.order.printBookName}} {{reportCtrl.order.bookType}} {{reportCtrl.order.bookNoOfCopies | INRCOPIES}}. Date: {{ reportCtrl.order.printOrderDate | date : 'dd.MM.y' }}.</strong> Now we are applying for part payment 80%. All part payment Document copies are enclosed. With this letter, please arrange the payment.</span></span></p>
-<p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">Thanking You</span></span></p>
-<p align="right"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> Yours faithfully,</span></span></p>
-<p align="justify">&nbsp;<span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">Enclosure:</span></span></p>
-<ol>
-<li><span style="font-family: 'Times New Roman', serif;">Print order Xerox copy</span></li>
-<li><span style="font-family: 'Times New Roman', serif;">Original BRV’S 56 (DC) Nos.</span></li>
-<li><span style="font-family: 'Times New Roman', serif;">Paper/Board/Kraft issue voucher</span></li>
-<li><span style="font-family: 'Times New Roman', serif;">Advanced Stamp Receipt</span></li>
-<li><span style="font-family: 'Times New Roman', serif;">Invoice 1+2 Copies</span></li>
-<li><span style="font-family: 'Times New Roman', serif;">Paper/Board/Kraft Consumption Statement</span></li>
-<li><span style="font-family: 'Times New Roman', serif;">Sample Book 6 Nos.</span></li>
-<li><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">TNPL Paper invoice</span></span></li>
-</ol>
 </div>

@@ -1,6 +1,12 @@
 'use strict';
 
 angular.module('myproject1App')
+.directive('myInvoiceHeader',function(){
+    return {
+        restrict:'E',
+        templateUrl:'/report/views/invoiceHeader.html'
+    };
+  })
 .config(function($stateProvider){
 
     $stateProvider.state('main.report',{

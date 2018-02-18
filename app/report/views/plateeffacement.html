@@ -1,6 +1,7 @@
 <button  pdf-save-button="idplaceeffacement" pdf-name="someone.pdf"  class="btn">Print</button>
 
 <div pdf-save-content="idplaceeffacement" width="100%">
+        <my-Invoice-Header></my-Invoice-Header>
 <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>Plate Effacement Certificate</strong></span></span></p>
 <p align="right"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>Date: {{ printBillingDate | date : 'dd.MM.y' }}</strong></span></span></p>
 <p align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>To</strong></span></span></p>
