@@ -9,11 +9,14 @@ angular.module('myproject1App')
         vm.order.printReleaseNumber = '1211';
         vm.order.printOrderDate = new Date();
         vm.order.printReleaseDate = new Date();
-        vm.order.bookNoOfCopies = '8000';
+        vm.order.bookNoOfCopies = '438000';
         vm.order.paymentType = '';
         vm.order.bookType = 'Free copies';
         vm.order.noOfBRV = '3';                
         reportscope.printBillingDate = new Date();
+
+        vm.order.bookPrintingType = 'Multi Colour';
+
 
         vm.order.invoiceNo = '68';
         vm.order.printing1000PreRate = '2000';
@@ -22,9 +25,7 @@ angular.module('myproject1App')
         vm.order.kraftRate = '5000';
         vm.order.transportRate = '1000';
 
-        vm.order.totalBillAmount = Number(vm.order.printingRate) + Number(vm.order.plateMakingRate) + Number(vm.order.kraftRate) + Number(vm.order.transportRate);
-
-        vm.order.totalAmountWord =   convertNumberToWords(Number(vm.order.totalBillAmount));
+       
 
 
         // paper board statement 
@@ -148,6 +149,11 @@ angular.module('myproject1App')
         }
 
         vm.order.showItem = function () {
+
+            vm.order.totalBillAmount = Number(vm.order.printingRate) + Number(vm.order.plateMakingRate) + Number(vm.order.kraftRate) + Number(vm.order.transportRate);
+
+            vm.order.totalAmountWord =   convertNumberToWords(Number(vm.order.totalBillAmount));
+            
             //  alert(vm.order.paymentType);
             if (vm.order.paymentType == 0) {
                 reportscope.myTabShow = true;
@@ -174,6 +180,8 @@ angular.module('myproject1App')
 
         function loadReportDetails() {
             vm.availableBookTypes = ['Sale copies', 'Free copies'];
+
+            vm.availableBookPrintingTypes = ['Multi Colour', 'Single Colour'];
 
             var reportData = {
                 reportName: "First report 1",

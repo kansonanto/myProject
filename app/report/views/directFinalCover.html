@@ -1,4 +1,4 @@
-<button  pdf-save-button="iddirectFinalCover" pdf-name="someone.pdf"  class="btn">Print</button>
+<button  pdf-save-button="iddirectFinalCover" pdf-name="DirectFinalCover-{{reportCtrl.order.printOrderNumber}}.pdf"  class="btn">Print</button>
 
 <div pdf-save-content="iddirectFinalCover" width="100%">
         <my-Invoice-Header></my-Invoice-Header>
@@ -11,8 +11,8 @@
 <p style="padding-left: 30px;" align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">Chennai &ndash; 6.</span></span></p>
 <p align="right">&nbsp;</p>
 <p align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>Respected Sir,</strong></span></span></p>
-<p align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>Sub:</strong></span></span><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> Direct final payment for P.O.NO: {{reportCtrl.order.printOrderNumber}}. <strong>{{reportCtrl.order.printBookName}} {{reportCtrl.order.bookType}} {{reportCtrl.order.bookNoOfCopies}}.</strong></span></span></p>
-<p align="justify">We have delivered for P.O.NO: {{reportCtrl.order.printOrderNumber}}. <strong>{{reportCtrl.order.printBookName}} {{reportCtrl.order.bookType}} {{reportCtrl.order.bookNoOfCopies}}</strong>. &nbsp;Date: {{ reportCtrl.order.printOrderDate | date : 'dd.MM.y' }}. Now we are applying for direct final payment document copies are enclosed. With this letter, please arrange the payment.</p>
+<p align="justify"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"><strong>Sub:</strong></span></span><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> Direct final payment for P.O.NO: {{reportCtrl.order.printOrderNumber}}. <strong>{{reportCtrl.order.printBookName}} {{reportCtrl.order.bookType}} {{reportCtrl.order.bookNoOfCopies | INRCOPIES }}.</strong></span></span></p>
+<p align="justify">We have delivered for P.O.NO: {{reportCtrl.order.printOrderNumber}}. <strong>{{reportCtrl.order.printBookName}} {{reportCtrl.order.bookType}} {{reportCtrl.order.bookNoOfCopies | INRCOPIES}}</strong>. &nbsp;Date: {{ reportCtrl.order.printOrderDate | date : 'dd.MM.y' }}. Now we are applying for direct final payment document copies are enclosed. With this letter, please arrange the payment.</p>
 <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">Thanking You</span></span></p>
 <p align="right"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;"> Yours faithfully,</span></span></p>
 <p align="justify">&nbsp;<span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">Enclosure:</span></span></p>

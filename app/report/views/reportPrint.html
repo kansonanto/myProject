@@ -88,11 +88,160 @@
         </div>
   </div>
   <div class="col-sm-6">
-        <div class="form-group">           
-          
-        </div>
-     </div>
+    <div class="form-group" id="jobIndustry">
+       <label>Book Printing Type *</label>      
+
+       <ui-select ng-model="reportCtrl.order.bookPrintingType" theme="bootstrap"  close-on-select="true" style="width: 100%;" title="Choose a Book printing Type">
+         <ui-select-match placeholder="Select book printing type...">{{$select.selected}}</ui-select-match>
+         <ui-select-choices repeat="bookPrintingType in reportCtrl.availableBookPrintingTypes | filter:$select.search">
+           {{bookPrintingType}}
+         </ui-select-choices>
+       </ui-select>
+    </div>
+ </div>
 </div>  
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+        <div class="form-group">
+           <label>Invoice No *</label>
+           <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.invoiceNo" placeholder="Invoice No" maxlength="255" class="form-control" ng-change="name_error = false">
+           </div>
+        </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Printing Rate for 1000 Copies *</label>
+      <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+         <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.printing1000PreRate" placeholder="Printing Rate for 1000 Copies" maxlength="255" class="form-control" ng-change="name_error = false">
+      </div>
+   </div>
+ </div>
+</div> 
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+        <div class="form-group">
+           <label>Printing Rate *</label>
+           <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.printingRate" placeholder="Printing Rate" maxlength="255" class="form-control" ng-change="name_error = false">
+           </div>
+        </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Plate Making</label>
+      <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+         <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.plateMakingRate" placeholder="Plate Making Rate" maxlength="255" class="form-control" ng-change="name_error = false">
+      </div>
+   </div>
+ </div>
+</div> 
+
+
+<div class="row">
+  <div class="col-sm-6">
+        <div class="form-group">
+           <label>Kraft Rate *</label>
+           <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.kraftRate" placeholder="Kraft Rate" maxlength="255" class="form-control" ng-change="name_error = false">
+           </div>
+        </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Transport Rate</label>
+      <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+         <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.transportRate" placeholder="Transport Rate" maxlength="255" class="form-control" ng-change="name_error = false">
+      </div>
+   </div>
+ </div>
+</div> 
+
+
+<div class="row">
+  <div class="col-sm-6">
+        <div class="form-group">
+           <label>Paper PBIV No *</label>
+           <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.paperPBIVNo" placeholder="Paper PBIV No" maxlength="255" class="form-control" ng-change="name_error = false">
+           </div>
+        </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Paper PBIV Date *</label>
+      <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+         <input id="new_no_of_BRV" autocomplete="off" type="date" ng-model="reportCtrl.order.paperPBIVDate" placeholder="Paper PBIV Date" maxlength="255" class="form-control" ng-change="name_error = false">
+      </div>
+   </div>
+ </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+        <div class="form-group">
+           <label>Board PBIV No *</label>
+           <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.boardPBIVNo" placeholder="Board PBIV No" maxlength="255" class="form-control" ng-change="name_error = false">
+           </div>
+        </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Board PBIV Date *</label>
+      <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+         <input id="new_no_of_BRV" autocomplete="off" type="date" ng-model="reportCtrl.order.boardPBIVDate" placeholder="Board PBIV Date" maxlength="255" class="form-control" ng-change="name_error = false">
+      </div>
+   </div>
+ </div>
+</div> 
+
+
+<div class="row">
+  <div class="col-sm-6">
+        <div class="form-group">
+           <label>Board PBIV Reams *</label>
+           <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.boardPBIVReams" placeholder="Board PBIV Reams" maxlength="255" class="form-control" ng-change="name_error = false">
+           </div>
+        </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Board PBIV Sheets *</label>
+      <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+         <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.boardPBIVSheets" placeholder="Board PBIV Sheets" maxlength="255" class="form-control" ng-change="name_error = false">
+      </div>
+   </div>
+ </div>
+</div> 
+
+
+<div class="row">
+  <div class="col-sm-6">
+        <div class="form-group">
+           <label>Paper PBIV Consumption *</label>
+           <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+              <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.paperPBIVConsumptionSize" placeholder="Paper PBIV Consumption" maxlength="255" class="form-control" ng-change="name_error = false">
+           </div>
+        </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Board PBIV Consumption *</label>
+      <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
+         <input id="new_no_of_BRV" autocomplete="off" type="text" ng-model="reportCtrl.order.boardPBIVConsumptionSize" placeholder="Board PBIV Date" maxlength="255" class="form-control" ng-change="name_error = false">
+      </div>
+   </div>
+ </div>
+</div> 
 
 
 <div class="row">
@@ -102,13 +251,13 @@
              <div id="new_company_name_error" ng-class="{'has-error':name_error == true}">
                     <div class="col-md-12"> 
                       <label class="radio-inline" for="radios-0">
-                          <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" checked value="0" ng-click="reportCtrl.order.showItem()" /> Direct Payment
+                          <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" checked value="0"  /> Direct Payment
                       </label> 
                       <label class="radio-inline" for="radios-1">
-                          <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" value="1"  ng-click="reportCtrl.order.showItem()"/> Part Payment
+                          <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" value="1"  /> Part Payment
                       </label> 
                       <label class="radio-inline" for="radios-2">
-                       <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" value="2" ng-click="reportCtrl.order.showItem()"/> Final Payment
+                       <input type="radio" name="payment" ng-model="reportCtrl.order.paymentType" value="2" /> Final Payment
                       </label> 
                     
                     </div>
@@ -127,8 +276,20 @@
        </div>
   </div>  
 
-<!-- {{ order.printBillingDate | date : 'dd.MM.y' }} -->
-
+  
+<div class="row">
+  <div class="col-sm-6">
+       
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+    <button class="btn btn-primary" style="float: right;"  type="button" id="btnGenerate" ng-click="reportCtrl.order.showItem()" title="Generate Report">Generate Report</button>    
+         
+      
+   </div>
+ </div>
+</div> 
+<br>
 <ul class="nav nav-tabs" id="myTab" ng-show="myTabShow">
   <li class="active"><a data-target="#coverletter" data-toggle="tab">Cover Letter</a></li>
   <li><a data-target="#invoice" data-toggle="tab">Invoice</a></li>
