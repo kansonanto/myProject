@@ -82,7 +82,7 @@
                 </span>
             
                 <p>
-                    <strong>Ref. P.O.NO: {{reportCtrl.order.printOrderNumber}}, Date: 20.11.2017</strong>
+                    <strong>Ref. P.O.NO: {{reportCtrl.order.printOrderNumber}}, Date: {{ reportCtrl.order.printOrderDate | date : 'dd.MM.y' }}</strong>
                 </p>
             </p>
             
@@ -109,21 +109,21 @@
                         <tr class="item">
                             <td>
             
-                                <p>To the printing charge for P.O.NO:{{reportCtrl.order.printOrderNumber}}. {{reportCtrl.order.printBookName}} {{reportCtrl.order.paymentType}} {{reportCtrl.order.bookNoOfCopies}}
+                                <p>To the printing charge for P.O.NO:{{reportCtrl.order.printOrderNumber}}. {{reportCtrl.order.printBookName}} {{reportCtrl.order.bookType}} {{reportCtrl.order.bookNoOfCopies}}
                                 </p>
             
                             </td>
                             <td style="vertical-align:middle;" align="justify">
             
-                                <p>1,15,000 Copies</p>
+                                <p>{{reportCtrl.order.bookNoOfCopies}} Copies</p>
                             </td>
                             <td>
             
-                                <p>Per 1000 Copies 10,250/-</p>
+                                <p>Per 1000 Copies {{reportCtrl.order.printing1000PreRate}}/-</p>
                             </td>
                             <td>
             
-                                <p>11,78,750</p>
+                                <p>{{reportCtrl.order.printingRate}}</p>
             
                             </td>
                         </tr>
@@ -144,7 +144,7 @@
                                 </td>
                                 <td>
                 
-                                    <p>60,000</p>
+                                    <p>{{reportCtrl.order.plateMakingRate}}</p>
                 
                                 </td>
                             </tr>
@@ -166,7 +166,7 @@
                             </td>
                             <td>
             
-                                <p>60,000</p>
+                                <p>{{reportCtrl.order.transportRate}}</p>
             
                             </td>
                         </tr>
@@ -188,7 +188,7 @@
             
                             </td>
                             <td>
-                                <p>15 000</p>
+                                <p>{{reportCtrl.order.kraftRate}}</p>
                             </td>
                         </tr>
                         <tr class="total">
@@ -196,7 +196,7 @@
                             
                              <td><strong>Total:</strong></td>
                             <td>
-                                    <strong>  12, 53,750 </strong>
+                                    <strong>  {{reportCtrl.order.totalBillAmount}} </strong>
                             </td>
                         </tr>
                     </tbody>
@@ -204,7 +204,7 @@
             
                 <br>
                 <p>
-                    <strong>In words: Twelve lakh fifty three thousand seven hundred and fifty only /-</strong>
+                    <strong>In words: {{reportCtrl.order.totalAmountWord}} only /-</strong>
                 </p>
             </div>
             <br>

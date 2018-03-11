@@ -25,21 +25,21 @@
                     <td style="width: 175px;">&nbsp;
                         <p align="justify">
                             <span style="font-family: 'Times New Roman', serif;">
-                                <span style="font-size: medium;">Date: 11.10.2017</span>
+                                <span style="font-size: medium;">Date: {{ reportCtrl.order.printOrderDate | date : 'dd.MM.y' }}</span>
                             </span>
                         </p>
                     </td>
                     <td style="width: 348px;">&nbsp;
                         <p align="justify">
                             <span style="font-family: 'Times New Roman', serif;">
-                                <span style="font-size: medium;">Release Order No: 1107</span>
+                                <span style="font-size: medium;">Release Order No: {{reportCtrl.order.printReleaseNumber}}</span>
                             </span>
                         </p>
                     </td>
                     <td style="width: 372px;">&nbsp;
                         <p align="justify">
                             <span style="font-family: 'Times New Roman', serif;">
-                                <span style="font-size: medium;">Date: 11.10.2017</span>
+                                <span style="font-size: medium;">Date: {{ reportCtrl.order.printReleaseDate | date : 'dd.MM.y' }}</span>
                             </span>
                         </p>
                     </td>
@@ -56,18 +56,7 @@
                     <td colspan="2" style="width: 348px;">
                         <p>
                             <span style="font-family: 'Times New Roman', serif;">
-                                <span style="font-size: medium;">Title: 8</span>
-                            </span>
-                            <sup>
-                                <span style="font-family: 'Times New Roman', serif;">
-                                    <span style="font-size: medium;">th</span>
-                                </span>
-                            </sup>
-                            <span style="font-family: 'Times New Roman', serif;">
-                                <span style="font-size: medium;"> Std. Term 3 Vol 1 (Tamil&nbsp;</span>
-                            </span>
-                            <span style="font-family: 'Times New Roman', serif;">
-                                <span style="font-size: medium;">&amp; English) T/M {{reportCtrl.order.paymentType}}</span>
+                                {{reportCtrl.order.printBookName}} {{reportCtrl.order.bookType}} 
                             </span>
                         </p>
                     </td>
@@ -148,13 +137,11 @@
         <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">1.</span></span></p>
         </td>
         <td width="130">
-        <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">1073 &ndash; 23/10/17</span></span></p>
+        <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">{{reportCtrl.order.paperPBIVNo}} &ndash; {{ reportCtrl.order.paperPBIVDate | date : 'dd.MM.y' }}</span></span></p>
         </td>
         <td rowspan="6" width="102">
         <p align="center">&nbsp;</p>
-        <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">Paper </span></span></p>
-        <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">84CM Reel </span></span></p>
-        <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">19.5Kg 80Gsm Hi-tech Map litho </span></span></p>
+        {{reportCtrl.order.paperPBIVSize}}
         <p align="center">&nbsp;</p>
         </td>
         </tr>
@@ -248,7 +235,7 @@
         <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">1.</span></span></p>
         </td>
         <td width="130">
-        <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">943 &ndash; 17/10/17</span></span></p>
+        <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">{{reportCtrl.order.boardPBIVNo}} &ndash; {{ reportCtrl.order.boardPBIVDate | date : 'dd.MM.y' }}</span></span></p>
         </td>
         <td colspan="2" width="65">
         <p align="center"><span style="font-family: 'Times New Roman', serif;"><span style="font-size: medium;">400</span></span></p>
